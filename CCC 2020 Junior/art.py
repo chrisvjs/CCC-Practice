@@ -1,4 +1,3 @@
-
 paintDrops = int(input())
 xCoordList = []
 yCoordList = []

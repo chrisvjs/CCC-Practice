@@ -1,4 +1,3 @@
-
 rint = lambda: int(input())
 rints = lambda: list(map(int, input().split()))
 
