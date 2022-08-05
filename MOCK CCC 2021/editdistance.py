@@ -12,8 +12,8 @@ ori = list(S)
 
 words = []
 
-for s in range(0,len(ori)):
-    for i in alpha:
+for i in alpha:
+    for s in range(len(ori)):
         o = list(S)
         t = list(S)
         l = list(S)

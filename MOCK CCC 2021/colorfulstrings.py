@@ -1,21 +1,28 @@
-from itertools import permutations
-rstr = input()
+r = []
 
-perms = [''.join(p) for p in permutations(rstr)]
-r = list(dict.fromkeys(perms))
+def subs(s, op, i, j):
 
-def uniqueCharacters(str):
-    for i in range(len(str)):
-        for j in range(i + 1,len(str)): 
-            if(str[i] == str[j]):
-                return False
-    return True
+    if(i == m):
+        op[j] = None
+        temp = "".join([i for i in op if i] )
 
-cS = []
-for i in r:
-    if uniqueCharacters(i):
-        cS.append(i)
+        r.append(temp)
+        return
 
-p = len(cS)
+    else:
+        op[j] = s[i]
+ 
+        subs(s, op, 
+                     i + 1, j + 1)
+        subs(s, op, 
+                     i + 1, j)
+        
+w = input()
+m = len(w)
+n = (2 ** m) +1
+ 
+op = [None for i in range(n)]
 
-print(p)
+subs(w, op, 0, 0)
+ 
+print(len(set(r)))
